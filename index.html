@@ -3,25 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> 
   <title>ICT Project</title>
   <style>
     body {
-      margin: 1;
-      font-family: sans-serif;
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      padding: 20px;
+      background-image: url('https://t4.ftcdn.net/jpg/02/78/95/91/360_F_278959123_s0jCqnIrY5eVfhxy1GxIWdWGvPmCkO4S.jpg'); 
+      background-size: cover;
+      background-position: center;
+      color: #333;
+      position: relative; /* Ensure body is relative for absolutely positioned elements */
     }
     header {
-      background-color: black;
+      background-color: #000;
       color: #fff;
       padding: 10px 0;
-      text-align: left;
-    }
-    nav {
-      display: inline-block;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
     nav ul {
       list-style-type: none;
-      margin: 0;
       padding: 0;
     }
     nav ul li {
@@ -32,9 +39,69 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s ease-in-out;
     }
     nav ul li a:hover {
+      color: #f0e;
       text-decoration: underline;
+    }
+
+    .search-bar-container {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      text-align: center;
+      z-index: 10000; /* Increase z-index to ensure it's above other content */
+    }
+
+    .album-cover {
+      width: 25%; 
+      height: 150px; 
+      object-fit: cover; 
+    }
+    .container {
+      max-width: 1400px;
+      margin: 60px auto 60px auto; /* Adjusted margin for search bar */
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 8px; 
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .img-fluid {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .img-fluid:hover {
+      transform: scale(1.05);
+    }
+    .About {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .About h2 {
+      color: #A020F0;
+      transition: color 0.3s ease-in-out;
+    }
+    .About h2:hover {
+      color: #f0e;
+    }
+    .row img {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      margin-bottom: 20px;
+    }
+    .btn-primary {
+      background-color: #A020F0;
+      border: none;
+      transition: background-color 0.3s ease-in-out;
+    }
+    .btn-primary:hover {
+      background-color: #f0e;
     }
   </style>
 </head>
@@ -42,7 +109,6 @@
   <header>
     <nav>
       <ul>
-        <li></li>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>
@@ -50,50 +116,61 @@
       </ul>
     </nav>
   </header>
-</body>
-</html>
-    <style>
-      body {
-        font-family: Times New Roman;
-        padding: 20px;
-      } 
-      .movie-info {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-       .container {
-        max-width: 1000px;
-        margin: 0 auto;
-              }   
-        .review {
-            background-color: #f8f9fa;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-        .movie-info h2 {
-            color: #FFC0CB;
-        }
-        .left-content {
-            background-color: #FF69B4;
-        }
-        .right-content {
-            text-align: center;
-        }
-    </style>
-  </head>
-<body>
 
-<div class="container">
+  <div class="container"> 
     <h1>Taylor Swift</h1>
 
-    <table class="table table-hover">
-        <tr>
-          <td class="right-content" style="width: 30%;">
-                <img src="https://hips.hearstapps.com/hmg-prod/images/taylor-swift-performs-onstage-for-night-one-of-taylor-swift-news-photo-1689066293.jpg?crop=0.70801xw:1xh;center,top&resize=1200:*" width="250" alt="Initial D" class="img-fluid">
-            </td>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="https://hips.hearstapps.com/hmg-prod/images/taylor-swift-performs-onstage-for-night-one-of-taylor-swift-news-photo-1689066293.jpg?crop=0.70801xw:1xh;center,top&resize=1200:*" alt="Taylor Swift" class="img-fluid">
+      </div>
+      <div class="col-md-6">
+        <div class="About">
+          <h2>About:</h2>
+          <p>
+            Taylor Swift, born on December 13, 1989, in West Reading, Pennsylvania, is a very talented singer-songwriter and a worldwide star. She's loved for her emotional songs and catchy tunes, making her one of the top names in music today. In 2024, she made history by winning her fourth Grammy Award for Album of the Year with her album "Midnights" (2022), a record no other artist has achieved.
+            <!-- Content truncated for brevity -->
+          </p>
+          <br>
+          <p>
+            From a young age, Swift was drawn to music. She started performing early, singing "The Star-Spangled Banner" at a Philadelphia 76ers game when she was just 11. A year later, she began playing guitar and writing songs, influenced by country musicians like Shania Twain and the Dixie Chicks. These songs expressed her feelings of being a young outsider. At 13, Swift's family moved to Hendersonville, Tennessee, to be closer to Nashville's country music scene, hoping to kickstart her music career.
+          </p>
+          <br>
+          <p>
+            Swift got a deal with RCA Records, which introduced her to important people in the music industry. By 14, she was signed with Sony/ATV as a songwriter. She performed her songs around Nashville, catching the attention of Scott Borchetta, a record executive. Borchetta signed Swift to his new Big Machine label, and in 2006, she released her first single, "Tim McGraw," which was influenced by and mentioned the country star she admired.
+          </p>
+          
+          <a href="https://www.britannica.com/biography/Taylor-Swift" class="btn btn-primary">Official Website</a>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+    <p>Albums</p>
+  <div class="row text-center mt-4">
+    <div class="col">
+      <a href="https://open.spotify.com/album/1NAmidJlEaVgA3MpcPFYGq?si=Z1w5r-rMTFOL6dGC1EruaQ" target="_blank">
+        <img src="https://i.scdn.co/image/ab67616d0000b273e787cffec20aa2a396a61647" alt="Album Cover 1" class="img-fluid album-cover">
+      </a>
+    </div>
+    <div class="col">
+      <a href="https://open.spotify.com/album/5AEDGbliTTfjOB8TSm1sxt?si=i0ZV03JtRaSLj0jtjxFC1w" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/en/8/8f/Taylor_Swift_-_Speak_Now_cover.png" alt="Album Cover 2" class="img-fluid album-cover">
+      </a>
+    </div>
+    <div class="col">
+      <a href="https://open.spotify.com/album/1o59UpKw81iHR0HPiSkJR0?si=uUuIM6b7QhCexJzlfcHKUA" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/en/f/f6/Taylor_Swift_-_1989.png" alt="Album Cover 3" class="img-fluid album-cover">
+      </a>
+    </div>
+  </div>
 
-            <td class="movie-info" style="width: 30%;">
-                <h2></h2>
-                <p>
-                    
-                </p>
+</div>
+
+  </div>
+  <div class="search-bar-container">
+    <input type="text" placeholder="Search..." style="padding: 10px; width: 80%; border-radius: 5px; border: 1px solid #ddd;">
+    <button type="submit" class="btn btn-primary" style="padding: 10px; border-radius: 5px;">Search</button>
+  </div>
+</body>
+</html>
+
